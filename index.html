@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maharanjitham S - Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #0a1d3d, #122a52);
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      background: rgba(0, 0, 50, 0.95);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 15px 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 1.4rem;
+      position: relative;
+    }
+
+    .navbar ul li a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #4fc3f7;
+      transition: width 0.3s;
+    }
+
+    .navbar ul li a:hover::after {
+      width: 100%;
+    }
+
+    .container {
+      margin-top: 100px;
+      padding: 20px 30px;
+    }
+
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    section:nth-of-type(odd) {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 20px;
+      padding: 60px 40px;
+    }
+
+    h1, h2, h3 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #4fc3f7;
+    }
+
+    p, li {
+      font-size: 1.3rem;
+      line-height: 1.8;
+    }
+
+    .intro {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .text {
+      flex: 1 1 60%;
+    }
+
+    .photo {
+      flex: 1 1 35%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .animated-photo {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 40px #4fc3f7;
+      transform: rotateY(0deg);
+      animation: spin3D 8s infinite linear;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 40px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 50, 0.8);
+      font-size: 1.2rem;
+    }
+
+    @keyframes spin3D {
+      from {
+        transform: rotateY(0deg);
+      }
+      to {
+        transform: rotateY(360deg);
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Bubble animation on click */
+    body:active::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, #4fc3f7 20%, transparent 70%);
+      border-radius: 50%;
+      animation: bubble 1s ease-out;
+      pointer-events: none;
+    }
+
+    @keyframes bubble {
+      from {
+        transform: scale(0);
+        opacity: 1;
+      }
+      to {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <div class="text">
+        <h1>Maharanjitham S</h1>
+        <p><strong>Objective:</strong> Driven and ambitious recent graduate with a strong academic record in Computer Science and Engineering, eager to contribute to a leading organization's growth and success.</p>
+      </div>
+      <div class="photo">
+        <img src="mahaphoto.jpg" alt="Maharanjitham's Photo" class="animated-photo" />
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am a Computer Science graduate from Kamaraj College of Engineering and Technology with honors in Software Application and Development. I'm passionate about UI/UX design, mobile app development, and innovative problem-solving in tech.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>Java</li>
+        <li>Flutter</li>
+        <li>UI/UX Design (Adobe XD, Figma)</li>
+        <li>HTML & CSS</li>
+        <li>SQL</li>
+        <li>JavaScript</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <h3>Visionmate - Smart Blind Stick</h3>
+      <p>Developed using Flutter and IoT for visually impaired navigation, with a voice assistant feature for emergency communication.</p>
+
+      <h3>Child Rights App</h3>
+      <p>A Flutter-based mobile app developed during a hackathon to spread awareness on child rights.</p>
+
+      <h3>Dyslexia Web App</h3>
+      <p>Built using Python, Flask, and NLP for phonetic assistance, text-to-speech, and reading help for dyslexic learners.</p>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>B.E. in Computer Science and Engineering</strong>, Kamaraj College of Engineering and Technology, CGPA: 8.8 (2021–2025)</li>
+        <li><strong>HSC</strong>, Kshatriya Girls Higher Secondary School, 88.5%</li>
+        <li><strong>SSLC</strong>, Kshatriya Girls Higher Secondary School, 83.8%</li>
+      </ul>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul>
+        <li>Python 3: Beginner to Advanced (Udemy, 2024)</li>
+        <li>Microsoft Power Platform Fundamentals (PL-900, Infosys, 2024)</li>
+        <li>Java Programming Fundamentals (2022)</li>
+        <li>SQL Basics, Python & C Challenges (SkillRack)</li>
+      </ul>
+    </section>
+
+    <section id="achievements">
+      <h2>Achievements & Leadership</h2>
+      <ul>
+        <li>Runner-up - Buildathon (Visionmate)</li>
+        <li>2nd Prize - Blind Coding at National Engineering College</li>
+        <li>2nd Prize - Paper Presentation at KCET</li>
+        <li>Participant - Smart India Hackathon, QST Hackathon</li>
+        <li>Class Representative (2nd Year)</li>
+        <li>Project Coordinator (Final Year)</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>📞 9384562734</p>
+      <p>✉️ maharanjitham63@gmail.com</p>
+      <p>📍 6/1312, Thamarai Street, R.S.Nagar, Allampatti, Virudhunagar</p>
+      <p><a href="https://www.linkedin.com/in/maharanjitham-781a2123a">LinkedIn</a> | <a href="https://github.com/Maharanjitham2004">GitHub</a> | <a href="https://leetcode.com/u/Maharanjitham/">LeetCode</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Maharanjitham S. All rights reserved.</p>
+  </footer>
+</body>
+</html>
